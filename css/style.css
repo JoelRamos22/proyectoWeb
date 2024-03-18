@@ -183,6 +183,7 @@ body {
     border-radius: 2px;
 }
 
+
 .food-menu {
     width: 100%;
     height: 90vh;
@@ -193,10 +194,22 @@ body {
 .food-menu__titles {
     width: 100%;
     height: 30vh;
+    word-spacing: 15px;
     display: flex; 
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+    align-items:center;
+}
+.titles__titulo {
+    font-size: 1.1em;
+    color: var(--color-font-1);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.titles__message {
+    font-size: 2.5em;
+    color: var(--color-font-2);
+    font-weight: 500
 }
 .food-menu__list {
     width: 100%;
@@ -204,6 +217,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.icon__list {
+    width: 100%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 .list__food-list {
     display: flex;
@@ -215,6 +235,74 @@ body {
 }
 .list__imagen-container {
     background:var(--color-font-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+}
+.imagen-container__img {
+    width: 50%;
+    height: 100%;
+    padding: 5px;   
+}
+.list__text-container {
+    text-transform: capitalize;
+    font-size: 1.1em;
+}
+.list__text-container small {
+    color: var(--color-font-1);
+}
+
+/* desde aqui */
+
+.services {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+.services__titles {
+    width: 100%;
+    height: 30vh;
+    word-spacing: 15px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: end;
+    align-items:center;
+}
+.titles-details__titulo {
+    font-size: 1.1em;
+    color: var(--color-font-1);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.titles-details__message {
+    font-size: 2.5em;
+    color: var(--color-font-2);
+    font-weight: 500
+}
+.services__list {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list__services-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+    padding: 10px;
+    
+}
+.list__service-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -394,6 +482,45 @@ body {
         background: var(--color-font-1);
         color: var(--color-font-2);
         border-radius: 2px;
+    }
+    .food-menu {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .food-menu__titles {
+        width: 100%;
+        height: 20vh;
+        gap: 5px;
+        padding: 0px 22px;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+    }
+    .titles__titulo {
+        font-size: 1em;
+    }
+    .titles__message {
+        font-size: 1.9em;
+    }
+    .food-menu__list {
+        width: 100%;
+        height: 70vh;    
+    }
+    .list__food-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list__imagen-container {
+        width: 65%;
+        height: 50%;
+        padding: 5px;
+    }
+    .list__text-container {
+        text-transform: capitalize;
+        font-size: 0.8em;
     }
 }
 
