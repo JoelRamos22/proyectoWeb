@@ -182,6 +182,61 @@ body {
     color: var(--color-font-2);
     border-radius: 2px;
 }
+
+.food-menu {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+.food-menu__titles {
+    width: 100%;
+    height: 30vh;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.food-menu__list {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list__food-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+    padding: 10px;
+    
+}
+.list__imagen-container {
+    background:var(--color-font-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+}
+.imagen-container__img {
+    width: 50%;
+    height: 100%;
+    padding: 5px;   
+}
+.list__text-container {
+    text-transform: capitalize;
+    font-size: 1.1em;
+}
+.list__text-container small {
+    color: var(--color-font-1);
+}
 @media (width < 600px){
     .header {
         width: 100%;
