@@ -11,6 +11,10 @@
 body {
     background: var(--color-background);
     z-index: 5;
+    transition: all 500ms ease;
+}
+.menu-movil{
+    display: none;
 }
 .header {
     display: flex;
@@ -26,6 +30,14 @@ body {
 }
 .header__menu-movil {
     display: none;
+}
+.header__container {
+    transition: 0.5s;
+}
+.header__container:hover{
+    border: 1px solid var(--color-font-1);
+    transition: .5s;
+    padding: 5px;
 }
 .header__text {
     width: 50%;
@@ -52,8 +64,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 1.3rem;
-    font-style: normal;
-
+    font-style: normal; 
 }
 
 .main {
@@ -105,6 +116,13 @@ body {
     background: var(--color-font-1);
     color: var(--color-font-2);
     border-radius: 2px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.button__boton:hover, .contain__learn-more:hover, .container__button:hover {
+    background: var(--color-font-2);
+    color: var(--color-font-1);
+    transition:.5s;
 }
 .image {
     width: 50%;
@@ -112,7 +130,6 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-
 }
 
 .image__food{
@@ -182,6 +199,8 @@ body {
     background: var(--color-font-1);
     color: var(--color-font-2);
     border-radius: 2px;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 
@@ -196,7 +215,7 @@ body {
     width: 100%;
     height: 30vh;
     word-spacing: 15px;
-    gap: 50px;
+    gap: 25px;
     display: flex; 
     flex-direction: column;
     justify-content: end;
@@ -278,7 +297,7 @@ body {
     width: 100%;
     height: 30vh;
     word-spacing: 15px;
-    gap: 50px;
+    gap: 25px;
     display: flex; 
     flex-direction: column;
     justify-content: end;
@@ -340,14 +359,14 @@ body {
 }
 .final {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .final__container {
     width: 90%;
-    height: 75%;
+    height: 70%;
     border-radius: 2px;
     padding: 7px 5px;
     background: var(--color-background-images);
@@ -355,7 +374,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 27px;
+    gap: 27px;  
 }
 .container__text {
     width: 50%;
@@ -376,11 +395,13 @@ body {
     background: var(--color-font-1);
     color: var(--color-font-2);
     border-radius: 2px;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .footer {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
@@ -389,7 +410,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 7px;
+    gap: 5px;
 }
 .menu-links__line, .our-service__line, .information__line, .contact__line {
     width: 23%;
@@ -417,14 +438,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 7px;
+    gap: 5px;
 }
 .information {
     grid-area: 1 / 4;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 7px;
+    gap: 5px;
 }
 
 .contact {
@@ -432,7 +453,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 7px;
+    gap: 5px;
 }
 .contact__list {
     display: flex;
@@ -444,6 +465,23 @@ body {
     font-size: 1.1em;
 }
 @media (width < 600px){
+    .menu-movil {
+        width: 100%;
+        height: 60vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--color-menu-movil);
+    }
+    .menu-movil__list {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
     .header {
         width: 100%;
         display: flex;
@@ -468,6 +506,14 @@ body {
         
     }
     .header__menu-movil {
+        transition: 0.5s;
+    } 
+    .header__menu-movil:hover{
+        transition: 0.5s;
+        padding: 5px;
+        color: var(--color-font-2);
+    }
+    .header__menu-movil {
         width: 70%;
         padding: 0px 10px;
         display: flex;
@@ -480,7 +526,7 @@ body {
     }
     .main {
         width: 100%;
-        gap: 10px;
+        gap: 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -687,6 +733,45 @@ body {
         font-size: 0.8em;
         width: 60%;
     }
+    .final {
+        height: 20vh;
+    }
+    .final__container {
+        height: 100%;
+        gap: 10px;
+    }
+    .footer {
+        height: 70vh;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 15px;
+    }
+    .menu-links {
+        grid-area: auto;
+        justify-content: center;
+        padding: 0px 20px;
+    }
+    .our-service {
+        grid-area: auto ;
+        justify-content: center;
+        padding: 0px 20px;
+    }
+    .information {
+        grid-area:auto;
+        justify-content: center;
+        padding: 0px 20px;
+    }
+    .contact {
+        grid-area: auto;
+        justify-content: end;
+        align-items: center;
+    }
+    .container__text {
+        width: 80%;
+        font-size: 1.3em;
+        word-spacing: 10px;
+    }
+
 }
 
 @media (width > 1600px) {
@@ -835,7 +920,7 @@ body {
     .services__titles {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
     }
     .titles-details__titulo {
         font-size: 1.5em;

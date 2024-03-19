@@ -8,19 +8,29 @@
     <title>Burguers Food</title>
 </head>
 <body>
+
     <header class="header"> 
         <h4 class="header__text">Foods</h4>
         <a href="#" class="header__menu-movil"><i class='bx bx-food-menu' style='color:#ff702a'  class="menu-movil__icon"></i></a>
         <ul class="header__list">
-            <li><a href="#" class="list__home">home</a></li>
-            <li><a href="#" class="list__about">about</a></li>
-            <li><a href="#" class="list__menu">menu</a></li>
-            <li><a href="#" class="list__service">service</a></li>
-            <li><a href="#" class="list__contact">contact</a></li>
+            <li class="header__container"><a href="#home" class="list__home">home</a></li>
+            <li class="header__container"><a href="#about-us" class="list__about">about</a></li>
+            <li class="header__container"><a href="#food-menu" class="list__menu">menu</a></li>
+            <li class="header__container"><a href="#services" class="list__service">service</a></li>
+            <li class="header__container"><a href="#final" class="list__contact">contact</a></li>
         </ul>
     </header>
+    <div class="menu-movil">
+        <ul class="menu-movil__list">
+            <li class="header__container"><a href="#home" class="list__home">home</a></li>
+            <li class="header__container"><a href="#about-us" class="list__about">about</a></li>
+            <li class="header__container"><a href="#food-menu" class="list__menu">menu</a></li>
+            <li class="header__container"><a href="#services" class="list__service">service</a></li>
+            <li class="header__container"><a href="#final" class="list__contact">contact</a></li>
+        </ul>
+    </div>
     <main class="main">
-        <section class="home">
+        <section class="home" id="home">
             <section class="card">
                 <article class="card__title">
                     <h1 class="title__text">full website</h1>
@@ -29,14 +39,15 @@
                     <p class="text__foods">Foods the <br> Most precious things</p>
                 </article>
                 <article class="card__button">
-                    <button class="button__boton">today´s menu</button> 
+                    <button class="button__boton">today´s menu
+                    </button> 
                 </article>
             </section>
             <section class="image">
                 <img src="storage/img/home.png" class="image__food">
             </section>
         </section>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <section class="about-us__image">
                 <img src="storage/img/about.png" class="image__about-us">
             </section>
@@ -49,7 +60,7 @@
                 </article>
             </section>
         </section>
-        <section class="food-menu">
+        <section class="food-menu"id="food-menu">
             <section class="food-menu__titles">
                     <h4 class="titles__titulo">food menu</h4>
                     <h2 class="titles__message">fresh taste and grat price</h2>
@@ -100,7 +111,7 @@
                 </article>
             </section>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <section class="services__titles">
                     <h4 class="titles-details__titulo">services</h4>
                     <h2 class="titles-details__message">we provide best food services</h2>
@@ -130,7 +141,7 @@
                 </article>
             </section>
         </section>
-        <section class="final">
+        <section class="final" id="final">
             <div class="final__container">
                 <h2 class="container__text">we make quality food Everyday</h2>
                 <button class="container__button">learn more</button>
@@ -143,19 +154,19 @@
             <div class="menu-links__line"></div>
             <ul class="menu-links__list">
                 <li class="menu-links__item">
-                    <a href="#" class="item__link">home</a>
+                    <a href="#home" class="item__link">home</a>
                 </li>
                 <li class="menu-links__item">
-                    <a href="#" class="item__link">about</a>
+                    <a href="#about-us" class="item__link">about</a>
                 </li>
                 <li class="menu-links__item">
-                    <a href="#" class="item__link">menu</a>
+                    <a href="#food-menu" class="item__link">menu</a>
                 </li>
                 <li class="menu-links__item">
-                    <a href="#" class="item__link">service</a>
+                    <a href="#services" class="item__link">service</a>
                 </li>
                 <li class="menu-links__item">
-                    <a href="#" class="item__link">contact</a>
+                    <a href="#final" class="item__link">contact</a>
                 </li>
             </ul>
         </section>
@@ -185,7 +196,7 @@
             <div class="information__line"></div>
             <ul class="information__list">
                 <li class="information__item">
-                    <a href="#" class="item__link">about us</a>
+                    <a href="#about-us" class="item__link">about us</a>
                 </li>
                 <li class="information__item">
                     <a href="#" class="item__link">delivery information</a>
