@@ -143,5 +143,77 @@ body::before {
     height: 90%;
     background-image: radial-gradient(circle, #ffffff, #f1ecfe, #e6d8fb, #dec4f6, #d9afef);
     border-radius: 40px;
+    border: 2px solid var(--color-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.container__container {
+    width: 97%;
+    height: 95%;
+    position: relative;
+    padding: 0px 20px;
+}
+.container__title {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+.title__titulo {
+    font-size: 3em;
+    font-weight: 600;
+}
+.container__clothes {
+    width: 100%;
+    height: 85%;
+    padding: 0px 5px;
+    gap: 32px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.clothes__container {
+    background: var(--color-5);
+    width: 22%;
+    height: 45%;
+    border-radius: 35px;
+    padding: 5px;
+    overflow: hidden;
+}
+.clothes__image {
+    height: 70%;
+    width: 100%;
+}
+.clothes__text {
+    width: 100%;
+    height: 30%;
+    background: var(--color-5);
+    padding: 15px;
+    display: flex;
+    border-radius: 10px;
 
+}
+.clothes__list {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style:none;
+}
+.button__container {
+    width: 50%;
+    height: 100%;
+    padding: 5px 0px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.clothes__button {
+    width: 100%;
+    border: none;
+    padding: 3px 3px;
+    border-radius: 15px;
+}
