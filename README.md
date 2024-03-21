@@ -8,6 +8,8 @@ Readme destinado a la segunda parte del proyecto web.
 - css
 - Grid 
 - Flexbox
+- boxIcons
+- Linear Gradient Generator
 
 #### Variables y colores usados :pencil2:
 
@@ -30,3 +32,9 @@ Readme destinado a la segunda parte del proyecto web.
 ![](https://img.freepik.com/fotos-premium/cielo-ilustrado-nubes-sol-estrellas-amanecer-o-atardecer-dibujo-digital-artistico-atmosferico-onirico-ia-generativa_58409-33864.jpg)
 
 se realizo el uso de varias linear grandient que se encuentran en el mismo código. 
+
+#### Fuentes :page_with_curl:
+
+Fuentes :  'Manrope', sans-serif
+
+Import : @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
