@@ -20,9 +20,9 @@ Readme Destinado a la primera parte del proyecto web
 -   --color-background-images: #ffefe8;
 -   --color-font-images: #000; 
 
-#### [Imagenes](https://drive.google.com/drive/folders/1BiFI6RHbuzLF6Hq7meDswZdiErA3rmV3) 
+#### [Imagenes](https://drive.google.com/drive/folders/1BiFI6RHbuzLF6Hq7meDswZdiErA3rmV3) :art:
 
-##### Fuentes 
+#### Fuentes :page_with_curl:
 
 fuente : font-family: 'Poppins', sans-serif;
 
