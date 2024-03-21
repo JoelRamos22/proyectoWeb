@@ -150,7 +150,7 @@ body::before {
 .page-body__container {
     width: 96%;
     height: 90%;
-    border-radius: 10px;
+    border-radius: 40px;
     border: 3px solid var(--color-5);
     display: flex;
     align-items: center;
@@ -175,62 +175,155 @@ body::before {
 }
 .container__clothes {
     width: 100%;
-    height: 85%;
+    height: 70%;
     padding: 0px 5px;
-    gap: 32px;
     overflow-y: scroll;
+    gap: 20px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.clothes__container {
-    background: var(--color-4);
-    width: 22%;
-    height: 45%;
-    border-radius: 35px;    
-    overflow: hidden;
-    color: var(--color-5);
-    border: 3px solid var(--color-5);
-}
-.clothes__image {
-    height: 70%;
-    width: 100%;
-}
-.clothes__text {
-    width: 100%;
+.order__container {
+    width: 98%;
     height: 30%;
-    background: var(--color-5);
+    border-radius: 35px;
     display: flex;
-    border-radius: 10px;
-
+    flex-direction: row;
+    border: 3px solid var(--color-5);
+    overflow: hidden;
 }
-.clothes__list {
-    width: 45%;
-    height: 90%;
-    text-transform: capitalize;
-    padding: 0px 20px;
+.order__view {
+    background: var(--color-4);
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px 15px;
+}
+.view__image {
+    width: 60%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.view__text {
+    width: 40%;
+    height: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    list-style:none;
-}
-.button__container {
-    width: 50%;
-    height: 80%;
-    padding: 5px;
-    display: flex;
-    align-items: end;
     justify-content: center;
+    list-style: none;
+    font-size: 1.5em;
+    gap: 15px;
 }
-.clothes__button {
-    width: 100%;
-    border: none;
-    padding: 3px 3px;
-    border-radius: 7px;
-    background: linear-gradient(to top, #f3f77d, #f5ec69, #f8e055, #fbd441, #ffc72d);
-    cursor: pointer;
-    text-transform: capitalize;
+.view__text li p {
     color: var(--color-5);
+}
+.order__amount {
+    background-image: url(../storage/img/fondo-plano-dia-mundial-poste_23-2149084335.avif);
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.amount__cantidad, .amount__precio, .amount__subtotal {
+    height: 100%;
+    font-size: 1.5em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.amount__cantidad li p, .amount__subtotal li p, .amount__precio li p{
+    color: var(--color-5);
+    text-transform: capitalize;
+}
+.amount__container-text {
+    border: 2px solid var(--color-5);
+}
+.order__trash {
+    width: 12%;
+    height: 100%;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-4);
+}
+.final {
+    width: 98%;
+    height: 20%;
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.final__button {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.button__final{
+    width: 30%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 5px;
+    background: linear-gradient(to top, #f3f77d, #f5ec69, #f8e055, #fbd441, #ffc72d);
+
+}
+.button__final a {
+    color: var(--color-5);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.3em;
+}
+.total__compra {
+    width: 30%;
+    height: 100%;
+    border: 3px solid var(--color-5);
+    background: var(--color-4);
+    border-radius: 10px;
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.total__list {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+}
+.total__list li p{
+    text-transform: capitalize;
+    font-size: 1.2em;
+    color: var(--color-5);
+}
+.total__button {
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 5px;
+    background-image: radial-gradient(circle, #f3f77d, #f5ec69, #f8e055, #fbd441, #ffc72d);
+}
+.total__button a {
+    text-decoration: none;
+    color: var(--color-5);
+    font-size: 1.2em;
+    font-weight: 500;
 }
 .container__clothes::-webkit-scrollbar {
     width: 12px;
@@ -239,5 +332,4 @@ body::before {
 .container__clothes::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: linear-gradient(to top, #f3f77d, #f5ec69, #f8e055, #fbd441, #ffc72d);
-
 }
