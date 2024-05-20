@@ -1,20 +1,28 @@
 import { LitElement, html, css } from "lit";
-import { getAllData } from "../modules/getData";
+import { getDataAllData } from "../modules/getData";
 
 export class allPage extends LitElement {
     constructor() {
         super()
         this.contador= 0; 
-        this.data = getAllData()
         this.categoriaSeleccionada = ''
         this.botonActivo = '';
+        this.products = []
+        this.total = 0; 
+    }
+    async connectedCallback() {
+        super.connectedCallback();
+        try {
+        this.data = await getDataAllData();
         this.data['todos los productos'] = [
             ...this.data['abrigo'],
             ...this.data['camiseta'],
             ...this.data['pantalon']
         ];
-        this.products = []
-        this.total = 0; 
+          // Aquí puedes realizar otras acciones con los datos si es necesario
+        } catch (error) {
+        console.error('Error al obtener los datos:', error);
+        }
     }
     static properties = {
         data: {typeof: Object},
@@ -24,6 +32,7 @@ export class allPage extends LitElement {
         total: {typeof: Number}
     }
     handleClickCategoria(categoria) {
+        const carritoVacio = this.shadowRoot.querySelector(".carrito_vacio")
         const carritoComprado = this.shadowRoot.querySelector("#carrito-comprado")
         const carrito = this.shadowRoot.querySelector(".contenedor-carrito")
         const titulo = this.shadowRoot.querySelector(".titulo")
@@ -31,6 +40,7 @@ export class allPage extends LitElement {
         const tituloCarrito = this.shadowRoot.querySelector(".titulo-carrito")
         const numerito = this.shadowRoot.querySelector(".numerito")
         const productos = this.shadowRoot.querySelector("#carrito-productos")
+        carritoVacio.style.display = "flex"
         productos.style.display =  "flex"
         carritoComprado.style.display = "none"
         numerito.style.background = "var(--color-white)"
@@ -517,13 +527,13 @@ export class allPage extends LitElement {
         /*** MEDIA QUERIES ***/
 
         @media screen and (max-width: 850px) {
-            .contenedor-productos {
+            .container_product {
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
         @media screen and (max-width: 675px) {
-            .contenedor-productos {
+            .container_product {
                 grid-template-columns: 1fr 1fr;
             }
         }
@@ -539,7 +549,7 @@ export class allPage extends LitElement {
             .aside {
                 position: fixed;
                 z-index: 9;
-                background-color: var(--clr-main);
+                background-color: var(--color-main);
                 left: 0;
                 box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
                 transform: translateX(-100%);
@@ -565,7 +575,7 @@ export class allPage extends LitElement {
                 padding: 2rem;
             }
 
-            .contenedor-productos {
+            .container_product {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -577,12 +587,12 @@ export class allPage extends LitElement {
             }
 
             .header-mobile .logo {
-                color: var(--clr-gray);
+                color: var(--color-gray);
             }
 
             .open-menu, .close-menu {
                 background-color: transparent;
-                color: var(--clr-gray);
+                color: var(--color-gray);
                 border: 0;
                 font-size: 2rem;
                 cursor: pointer;
@@ -614,7 +624,7 @@ export class allPage extends LitElement {
         }
 
         @media screen and (max-width: 400px) {
-            .contenedor-productos {
+            .container_product {
                 grid-template-columns: 1fr;
             }
         }

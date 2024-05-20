@@ -1,6 +1,6 @@
 # Proyecto We​b :rocket:
 
-Contenido del proyecto web html y css German Joel Ramos 
+Contenido del proyecto web html y css German Joel Ramos (*con la parte 2 mejorada*)
 
 ### Contenidos :page_with_curl::
 
