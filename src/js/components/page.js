@@ -9,20 +9,12 @@ export class allPage extends LitElement {
         this.botonActivo = '';
         this.products = []
         this.total = 0; 
-    }
-    async connectedCallback() {
-        super.connectedCallback();
-        try {
-        this.data = await getDataAllData();
+        this.data = getDataAllData()
         this.data['todos los productos'] = [
             ...this.data['abrigo'],
             ...this.data['camiseta'],
             ...this.data['pantalon']
         ];
-          // Aquí puedes realizar otras acciones con los datos si es necesario
-        } catch (error) {
-        console.error('Error al obtener los datos:', error);
-        }
     }
     static properties = {
         data: {typeof: Object},
