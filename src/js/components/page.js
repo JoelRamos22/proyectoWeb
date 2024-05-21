@@ -104,6 +104,7 @@ export class allPage extends LitElement {
         const numerito = this.shadowRoot.querySelector(".numerito")
         const acciones = this.shadowRoot.querySelector("#carrito-acciones")
         const carritoVacio = this.shadowRoot.querySelector(".carrito_vacio")
+        const asideMobile = this.shadowRoot.querySelector(".aside")
         numerito.style.background = "var(--color-main)"
         numerito.style.color = "var(--color-white)"
         tituloCarrito.style.display = "flex"
@@ -118,6 +119,9 @@ export class allPage extends LitElement {
             carritoVacio.style.display = "none"
 
         }
+        asideMobile.style.visibility = "hidden"
+        asideMobile.style.opacity = "0"
+        asideMobile.style.transform = "translateX(100)"
         this.requestUpdate()
     }
     vaciarCarrito() {
@@ -151,16 +155,43 @@ export class allPage extends LitElement {
         this.products = []
         this.requestUpdate()
     }
+    asideMobileVisible() {
+        const asideMobile = this.shadowRoot.querySelector(".aside")
+        asideMobile.style.visibility = "visible"
+        asideMobile.style.opacity = "1"
+        asideMobile.style.transform = "translateX(0)"
+        this.requestUpdate()
+    }
+    asideMobileInvisible (){
+        const asideMobile = this.shadowRoot.querySelector(".aside")
+        asideMobile.style.visibility = "hidden"
+        asideMobile.style.opacity = "0"
+        asideMobile.style.transform = "translateX(100)"
+        this.requestUpdate()
+    }
     render() {
         return html`
             <div class="container">
+                <header class="header-mobile">
+                    <h1 class="logo">CampusShop</h1>
+                    <button class="open-menu" id="open-menu" @click=${() => this.asideMobileVisible()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        </svg>
+                    </button>
+                </header>
                 <aside class="aside">
-                    <header>
+                    <header class="aside-header">
                         <h1 class="logo">CampusShop 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
                             <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/>
                             </svg>
                         </h1>
+                        <div class="container-back-logo" @click=${() => this.asideMobileInvisible()}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+                                </svg>
+                        </div>
                     </header>
                     <nav>
                         <ul class="list">
@@ -320,7 +351,12 @@ export class allPage extends LitElement {
         .logo {
             font-weight: 500;
             font-size: 1.4em;
-
+        }
+        .container-back-logo {
+            display: none; 
+        }
+        .header-mobile {
+            display: none 
         }
         .list {
             list-style: none; 
@@ -436,6 +472,10 @@ export class allPage extends LitElement {
             color: var(--color-main);
             font-weight: 500; 
         }
+        .container-back-logo {
+            display: flex; 
+            color: var(--color-white)
+        }
         .carrito-comprado {
             display: none; 
         }
@@ -528,6 +568,12 @@ export class allPage extends LitElement {
             .container_product {
                 grid-template-columns: 1fr 1fr;
             }
+            .header-mobile {
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
 
         @media screen and (max-width: 600px) {
@@ -537,7 +583,18 @@ export class allPage extends LitElement {
                 display: flex;
                 flex-direction: column;
             }
-
+            .aside-header {
+                display: flex; 
+                flex-direction: row; 
+                gap: 20px; 
+            }
+            .container-back-logo {
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                font-size: 2em; 
+                cursor: pointer
+            }
             .aside {
                 position: fixed;
                 z-index: 9;
@@ -586,7 +643,7 @@ export class allPage extends LitElement {
                 background-color: transparent;
                 color: var(--color-gray);
                 border: 0;
-                font-size: 2rem;
+                font-size: 2em;
                 cursor: pointer;
             }
 
