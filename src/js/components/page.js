@@ -104,7 +104,6 @@ export class allPage extends LitElement {
         const numerito = this.shadowRoot.querySelector(".numerito")
         const acciones = this.shadowRoot.querySelector("#carrito-acciones")
         const carritoVacio = this.shadowRoot.querySelector(".carrito_vacio")
-        const asideMobile = this.shadowRoot.querySelector(".aside")
         numerito.style.background = "var(--color-main)"
         numerito.style.color = "var(--color-white)"
         tituloCarrito.style.display = "flex"
@@ -119,9 +118,6 @@ export class allPage extends LitElement {
             carritoVacio.style.display = "none"
 
         }
-        asideMobile.style.visibility = "hidden"
-        asideMobile.style.opacity = "0"
-        asideMobile.style.transform = "translateX(100)"
         this.requestUpdate()
     }
     vaciarCarrito() {
